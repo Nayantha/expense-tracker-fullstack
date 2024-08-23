@@ -4,8 +4,9 @@
         <template #footer>
             <div class="content">
                 <UCard>
-                    About
-
+                    <a href="/about">About</a>
+                    <br>
+                    <a href="/">Home</a>
                 </UCard>
                 <div class="socials">
                     <a href="https://github.com/Nayantha"><UIcon class="w-5 h-5 text-primary-500" name="i-mdi-linkedin"/></a>
