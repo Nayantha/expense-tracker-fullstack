@@ -26,7 +26,7 @@ model Transaction {
   id        Int      @id @default(autoincrement())
   // metadata
   accountId Int
-  amount    Float
+  amount    Decimal
   type      String // E.g., 'deposit' or 'withdrawal'
   createdAt DateTime @default(now())
   note      String
