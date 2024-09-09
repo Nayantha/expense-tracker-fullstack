@@ -18,7 +18,7 @@ const accountId = ref(route.params.accountId);
 const transactions = ref([]);
 
 onMounted(async () => {
-    transactions.value = await $fetch(`/api/transactions?accountId=${accountId.value}`);
+    transactions.value = await $fetch(`/api/transactions`, { method: "GET"});
 });
 </script>
 
