@@ -11,10 +11,7 @@
 
 <script setup>
 import {onMounted, ref} from 'vue';
-import {useRoute} from 'vue-router';
 
-const route = useRoute();
-const accountId = ref(route.params.accountId);
 const transactions = ref([]);
 
 onMounted(async () => {
