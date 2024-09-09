@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Transactions for Account ID: {{ accountId }}</h1>
+        <h1>Transactions for All Accounts</h1>
         <ul>
             <li v-for="transaction in transactions" :key="transaction.id">
                 {{ transaction.type }} - {{ transaction.amount }} - {{ transaction.note }}
