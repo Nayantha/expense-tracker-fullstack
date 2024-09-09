@@ -8,18 +8,18 @@ datasource db {
 }
 
 model Account {
-  id            Int           @id @default(autoincrement())
+  id           Int           @id @default(autoincrement())
   // metadata
-  no            String        @unique
-  bankName      String
-  accountType   String
-  interrestRate Int
-  amount        Decimal
+  no           String        @unique
+  bankName     String
+  accountType  String
+  interestRate Int
+  amount       Decimal
   // timestamps
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
   // transactions rel
-  transactions  Transaction[]
+  transactions Transaction[]
 }
 
 model Transaction {
