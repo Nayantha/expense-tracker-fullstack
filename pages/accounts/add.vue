@@ -3,7 +3,11 @@
         <form @submit.prevent="createAccount">
             <input v-model="accountNumber" placeholder="Account Number" />
             <input v-model="bankName" placeholder="Bank Name" />
-            <input v-model="accountType" placeholder="Account Type" />
+            <select v-model="accountType">
+                <option v-for="(accountType, key) in accountTypeOptions" :key="key" :value="accountType">
+                    {{ accountType }}
+                </option>
+            </select>
             <input v-model="interestRate" placeholder="Interest Rate" type="number" />
             <button type="submit">Create Account</button>
         </form>
@@ -14,6 +18,7 @@
 import { ref } from 'vue';
 import { AccountType } from "~/models/AccountType";
 
+const accountTypeOptions = Object.values(AccountType);
 const accountNumber = ref<string>('');
 const bankName = ref<string>('');
 const accountType = ref<AccountType>(AccountType.Savings);
