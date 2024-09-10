@@ -9,12 +9,13 @@
     </div>
 </template>
 
-<script setup>
-import {onMounted, ref} from 'vue';
-import {useRoute} from 'vue-router';
+<script lang="ts" setup>
+import { onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import { Transaction } from "~/models/Transaction";
 
 const route = useRoute();
-const transactions = ref([]);
+const transactions = ref<Transaction[]>([]);
 
 onMounted(async () => {
     transactions.value = await $fetch(`/api/transactions/${route.params.accountId}`);
