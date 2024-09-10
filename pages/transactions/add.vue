@@ -3,7 +3,11 @@
         <form @submit.prevent="createTransaction">
             <input v-model="accountId" placeholder="Account ID" />
             <input v-model="amount" placeholder="Amount" type="number" />
-            <input v-model="type" placeholder="Type" />
+            <select v-model="type">
+                <option v-for="(accountType, key) in accountTypeOptions" :key="key" :value="accountType">
+                    {{ accountType }}
+                </option>
+            </select>
             <input v-model="note" placeholder="Note" />
             <button type="submit">Create Transaction</button>
         </form>
@@ -14,7 +18,7 @@
 import { ref } from 'vue';
 import { AccountType } from "~/models/AccountType";
 
-
+const accountTypeOptions = Object.values(AccountType);
 const accountId = ref<string>("");
 const amount = ref<Number>(0.0);
 const type = ref<AccountType>(AccountType.Savings);
