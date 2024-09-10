@@ -1,6 +1,14 @@
-# Nuxt 3 Minimal Starter
+# Expense Tracker
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This app is a simple web application that tracks your day-to-day transactions and bank accounts.
+The database is set to be MYSQL and can be changed by updating the datasource provider as depicted below.
+
+```prisma
+    datasource db {
+      provider = ""
+    }
+```
+Add a .env file with the key is "DATABASE_URL" and the relevant url of the database.
 
 ## Setup
 
@@ -71,5 +79,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
