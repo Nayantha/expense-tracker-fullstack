@@ -16,7 +16,7 @@ import {ref} from 'vue';
 const no = ref('');
 const bankName = ref('');
 const accountType = ref('');
-const interrestRate = ref(0);
+const interestRate = ref(0);
 
 async function createAccount() {
     await $fetch('/api/accounts', {
@@ -25,7 +25,7 @@ async function createAccount() {
             no: no.value,
             bankName: bankName.value,
             accountType: accountType.value,
-            interrestRate: interrestRate.value,
+            interestRate: interestRate.value,
         },
     });
 }
