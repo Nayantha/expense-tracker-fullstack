@@ -4,8 +4,8 @@
             <input v-model="accountId" placeholder="Account ID" />
             <input v-model="amount" placeholder="Amount" type="number" />
             <select v-model="type">
-                <option v-for="(accountType, key) in accountTypeOptions" :key="key" :value="accountType">
-                    {{ accountType }}
+                <option v-for="(transactionType, key) in transactionTypeOptions" :key="key" :value="transactionType">
+                    {{ transactionType }}
                 </option>
             </select>
             <input v-model="note" placeholder="Note" />
@@ -16,12 +16,13 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { AccountType } from "~/models/AccountType";
+import { TransactionType } from "~/models/TransactionType";
 
-const accountTypeOptions = Object.values(AccountType);
+
+const transactionTypeOptions = Object.values(TransactionType);
 const accountId = ref<string>("");
 const amount = ref<Number>(0.0);
-const type = ref<AccountType>(AccountType.Savings);
+const type = ref<TransactionType>(TransactionType.Deposit);
 const note = ref<string>('');
 
 async function createTransaction() {
