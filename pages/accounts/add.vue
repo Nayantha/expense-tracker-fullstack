@@ -10,13 +10,14 @@
     </div>
 </template>
 
-<script setup>
-import {ref} from 'vue';
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { AccountType } from "~/models/AccountType";
 
-const accountNumber = ref('');
-const bankName = ref('');
-const accountType = ref('');
-const interestRate = ref(0);
+const accountNumber = ref<string>('');
+const bankName = ref<string>('');
+const accountType = ref<AccountType>(AccountType.Savings);
+const interestRate = ref<number>(0);
 
 async function createAccount() {
     await $fetch('/api/accounts', {
