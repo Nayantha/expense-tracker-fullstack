@@ -4,7 +4,7 @@
             <input v-model="no" placeholder="Account Number" />
             <input v-model="bankName" placeholder="Bank Name" />
             <input v-model="accountType" placeholder="Account Type" />
-            <input v-model="interrestRate" placeholder="Interest Rate" type="number" />
+            <input v-model="interestRate" placeholder="Interest Rate" type="number" />
             <button type="submit">Create Account</button>
         </form>
     </div>
