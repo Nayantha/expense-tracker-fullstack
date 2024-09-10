@@ -9,10 +9,11 @@
     </div>
 </template>
 
-<script setup>
-import {onMounted, ref} from 'vue';
+<script lang="ts" setup>
+import { onMounted, ref } from 'vue';
+import type { Account } from "models/Account";
 
-const accounts = ref([]);
+const accounts = ref<Account[]>([]);
 
 onMounted(async () => {
     accounts.value = await $fetch('/api/accounts');
