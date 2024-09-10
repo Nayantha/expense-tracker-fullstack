@@ -1,7 +1,7 @@
 <template>
     <div>
         <form @submit.prevent="createAccount">
-            <input v-model="no" placeholder="Account Number" />
+            <input v-model="accountNumber" placeholder="Account Number" />
             <input v-model="bankName" placeholder="Bank Name" />
             <input v-model="accountType" placeholder="Account Type" />
             <input v-model="interestRate" placeholder="Interest Rate" type="number" />
@@ -13,7 +13,7 @@
 <script setup>
 import {ref} from 'vue';
 
-const no = ref('');
+const accountNumber = ref('');
 const bankName = ref('');
 const accountType = ref('');
 const interestRate = ref(0);
@@ -22,7 +22,7 @@ async function createAccount() {
     await $fetch('/api/accounts', {
         method: 'POST',
         body: {
-            no: no.value,
+            no: accountNumber.value,
             bankName: bankName.value,
             accountType: accountType.value,
             interestRate: interestRate.value,
