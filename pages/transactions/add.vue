@@ -3,7 +3,7 @@
         <form @submit.prevent="createTransaction">
             <input v-model="accountId" placeholder="Account ID" />
             <input v-model="amount" placeholder="Amount" type="number" />
-            <select v-model="type">
+            <select v-model="transactionType">
                 <option v-for="(transactionType, key) in transactionTypeOptions" :key="key" :value="transactionType">
                     {{ transactionType }}
                 </option>
@@ -22,7 +22,7 @@ import { TransactionType } from "~/models/TransactionType";
 const transactionTypeOptions = Object.values(TransactionType);
 const accountId = ref<string>("");
 const amount = ref<Number>(0.0);
-const type = ref<TransactionType>(TransactionType.Deposit);
+const transactionType = ref<TransactionType>(TransactionType.Deposit);
 const note = ref<string>('');
 
 async function createTransaction() {
